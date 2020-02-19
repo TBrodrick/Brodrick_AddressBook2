@@ -1,6 +1,7 @@
 package com.company;
 
 import java.awt.print.Book;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -15,7 +16,7 @@ class Menu{
     * @param: none
     * @return: The character of the
      */
-    public void displayMainMenu(AddressBook Book){
+    public int displayMainMenu(AddressBook Book){
         System.out.println("Enter the letter for your selection, then hit enter");
         System.out.println("a) Load from file");
         System.out.println("b) Add a new Entry");
@@ -29,9 +30,39 @@ class Menu{
 
         switch (readIn){
             case "a":{
-
+                System.out.println("Currently out of order");
+                break;
+            }
+            case "b":{
+                Entry ent = new Entry();
+                ent.setFirstName(prompt_FirstName());
+                ent.setLastName(prompt_LastName());
+                ent.setStreet(prompt_Street());
+                ent.setCity(prompt_City());
+                ent.setState(prompt_State());
+                ent.setZip(prompt_Zip());
+                ent.setPhone(prompt_Phone());
+                ent.setEmail(prompt_Email());
+                Book.add(ent);
+                break;
+            }
+            case "c":{
+                ArrayList<String> tempNames = new ArrayList<>();
+                ArrayList<Integer> addresses = new ArrayList<>();
+                Book.find(prompt_LastName(), tempNames, addresses);
+                System.out.println("Which of these would you like to remove?");
+                for(int i = 0; i < tempNames.size(); i++){
+                    System.out.println((i+1) + ". " + tempNames.get(i));
+                }
+                int opIn = in.nextInt();
+                Book.remove(addresses.get(opIn - 1));
+                break;
+            }
+            case "e":{
+                Book.toString();
             }
         }
+        return 1;
     }
 
     public String prompt_FirstName(){

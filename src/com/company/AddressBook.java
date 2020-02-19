@@ -19,15 +19,14 @@ public class AddressBook{
         Book.add(newEntry);
     }
 
-    public static ArrayList<String> find(String lastName){
-        ArrayList<String> possibleEntries = new ArrayList<>();
+    public static void find(String lastName, ArrayList<String> names, ArrayList<Integer> addresses){
 
         for(int i = 0; i < Book.size(); i++){
             if(Book.get(i).getLastName() == lastName){
-                possibleEntries.add(Book.get(i).getFirstName() + " " + Book.get(i).getLastName());
+                names.add(Book.get(i).getFirstName() + " " + Book.get(i).getLastName());
+                addresses.add(i);
             }
         }
-        return possibleEntries;
     }
 
     public void remove(String name){
@@ -52,7 +51,7 @@ public class AddressBook{
         //Try to access file. test: C:/Users/trist/IdeaProjects/AddressBookApp/src/com/company/testIn.txt
         File file = new File(fileName);
         Scanner scan = new Scanner(file);
-        scan.useDelimiter(", ");
+        scan.useDelimiter("//");
         Entry ent = new Entry();
 
         while(scan.hasNext()){

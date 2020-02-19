@@ -13,8 +13,9 @@ public class AddressBookApplication {
 	public static AddressBook ab;
 
     public static void main(String[] args) throws FileNotFoundException {
-		ab.readFromFile();
+		Menu mainMen = new Menu();
 
+		while (mainMen.displayMainMenu(ab) != 0);
 		//List Address Book
     	ab.list();
     }
