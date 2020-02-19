@@ -15,8 +15,9 @@ class Menu{
     AddressBook Book = new AddressBook();
 
     /*
+    * The actual function of the program
     * @param: none
-    * @return: The character of the
+    * @return: none
      */
     public void displayMainMenu() throws FileNotFoundException{
         int flag = 1;
@@ -82,42 +83,81 @@ class Menu{
             }
         }
     }
-
+    /*
+    * Propmpts the user for their first name
+    * @return the user input
+     */
     public String prompt_FirstName(){
         System.out.println("First Name: ");
         readIn = in.nextLine();
         return readIn;
     }
+
+    /*
+     * Propmpts the user for their last name
+     * @return the user input
+     */
     public String prompt_LastName(){
         System.out.println("Last Name: ");
         readIn = in.nextLine();
         return readIn;
     }
+
+    /*
+     * Propmpts the user for their street address
+     * @return the user input
+     */
     public String prompt_Street(){
         System.out.println("Street: ");
         readIn = in.nextLine();
         return readIn;
     }
+
+    /*
+     * Propmpts the user for their city of residence
+     * @return the user input
+     */
     public String prompt_City() {
         System.out.println("City: ");
         readIn = in.nextLine();
         return readIn;
     }
+
+    /*
+     * Propmpts the user for their state of residence
+     * @return the user input
+     */
     public String prompt_State() {
         System.out.println("State: ");
         readIn = in.nextLine();
         return readIn;
     }
-    public String prompt_Zip() {
+
+    /*
+     * Propmpts the user for their zip code
+     * @return the user input
+     */
+    public int prompt_Zip() {
+        int readNum = 0;
         System.out.println("Zip: ");
-        readIn = in.nextLine();
-        return readIn;
+        readNum = in.nextInt();
+        return readNum;
     }
+
+    /*
+     * Propmpts the user for their phone number
+     * @return the user input
+     */
     public String prompt_Phone() {
         System.out.println("Phone: ");
         readIn = in.nextLine();
         return readIn;
     }
+
+    /*
+     * Propmpts the user for their email address
+     * @return the user input
+     */
     public String prompt_Email() {
         System.out.println("Email: ");
         readIn = in.nextLine();

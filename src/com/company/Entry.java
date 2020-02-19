@@ -10,7 +10,7 @@ public class Entry {
     private String Street;
     private String City;
     private String State;
-    private String Zip;
+    private int Zip;
     private String Phone;
     private String Email;
 
@@ -20,7 +20,7 @@ public class Entry {
         Street = "street";
         City = "city";
         State = "state";
-        Zip = "0";
+        Zip = 0;
         Phone = "(000)000-0000";
         Email = "Example@example.com";
     }
@@ -35,7 +35,7 @@ public class Entry {
     * @param Added person's phone number
     * @param Added person's email address
      */
-    Entry(String first, String last, String street, String city, String state, String zip, String phone, String email){
+    Entry(String first, String last, String street, String city, String state, int zip, String phone, String email){
         FirstName = first;
         LastName = last;
         Street = street;
@@ -45,7 +45,9 @@ public class Entry {
         Phone = phone;
         Email = email;
     }
-
+    /*
+    * @return a string listing of the entry
+     */
     public String toString(){
        return "First Name: " + FirstName + "\nLast Name: " + LastName + "\nStreet: " + Street + "\nCity: " + City + "\nState: " + State + "\nZip: " + Zip + "\nPhone: " + Phone + "\nEmail: " + Email;
     }
@@ -123,14 +125,14 @@ public class Entry {
     /*
      * @param Added person's new zip code
      */
-    public void setZip(String zip){
+    public void setZip(int zip){
         Zip = zip;
     }
 
     /*
      * @return entry's zip code
      */
-    public String getZip(){
+    public int getZip(){
         return Zip;
     }
 

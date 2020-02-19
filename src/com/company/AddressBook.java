@@ -13,11 +13,18 @@ import java.util.Scanner;
 public class AddressBook{
     private static ArrayList<Entry> Book = new ArrayList<>();
     /*
+    * Adds an entry to the address book
     *@param Entry to be added to the address book
      */
     public static void add(Entry newEntry){
         Book.add(newEntry);
     }
+
+    /*
+    * Finds an entry based on last name
+    * @param last name of the person sought
+    * @return An array list of people with the given last name
+     */
 
     public static ArrayList<Entry> find(String lastName){
         ArrayList<Entry> possibles = new ArrayList<>();
@@ -29,6 +36,10 @@ public class AddressBook{
         return possibles;
     }
 
+    /*
+    * removes the given entry from the book
+    * @param The entry to be deleted
+     */
     public void remove(Entry rem){
         for(int i = 0; i < Book.size(); i++){
             if(Book.get(i) == rem){
@@ -37,6 +48,7 @@ public class AddressBook{
         }
     }
     /*
+     * Reads Entries from an input file
      * @param Address book to add the entries to
      */
     public static void readFromFile() throws FileNotFoundException {
@@ -56,13 +68,16 @@ public class AddressBook{
             ent.setStreet(scan.nextLine());
             ent.setCity(scan.nextLine());
             ent.setState(scan.nextLine());
-            ent.setZip(scan.nextLine());
+            ent.setZip(scan.nextInt());
             ent.setPhone(scan.nextLine());
             ent.setEmail(scan.nextLine());
             Book.add(ent);
         }
     }
 
+    /*
+    * Outputs all entries to standard out
+     */
     public static void list(){
         for(int i = 0; i < Book.size(); i++){
             System.out.println(Book.get(i).toString());
