@@ -1,1 +1,40 @@
-Tristan//Brodrick//25200 Carlos Bee Blvd//Hayward//CA//94542//(707)239-1512//tbrodrick@horizon.csueastbay.edu//
+Tristan
+Brodrick
+25200 Carlos Bee Blvd
+Hayward
+CA
+94542
+(707)239-1512
+tbrodrick@horizon.csueastbay.edu
+Jeff
+Bricky
+25200 Carlos Bee Blvd
+Hayward
+CA
+94542
+(000)000-0000
+jbrick@sample.com
+A
+Person
+0 Place place
+Generic City
+OH
+12345
+(012)345-6789
+example@something.idk
+Zaphod
+Beeblebrox
+Heart of Gold Master Bedroom
+Space
+Space
+99999
+0
+president@Universe.job
+Kvothe
+Arledanson
+42 House of the Wind Court
+The University
+The Commonwealth
+4
+N/a
+karld@horizon.university.edu

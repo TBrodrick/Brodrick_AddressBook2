@@ -48,20 +48,19 @@ public class AddressBook{
         //Try to access file. test: C:/Users/trist/IdeaProjects/AddressBookApp/src/com/company/testIn.txt
         File file = new File(fileName);
         Scanner scan = new Scanner(file);
-        scan.useDelimiter("//");
-        Entry ent = new Entry();
 
-        while(scan.hasNext()){
-            ent.setFirstName(scan.next());
-            ent.setLastName(scan.next());
-            ent.setStreet(scan.next());
-            ent.setCity(scan.next());
-            ent.setState(scan.next());
-            ent.setZip(scan.next());
-            ent.setPhone(scan.next());
-            ent.setEmail(scan.next());
+        while(scan.hasNextLine()){
+            Entry ent = new Entry();
+            ent.setFirstName(scan.nextLine());
+            ent.setLastName(scan.nextLine());
+            ent.setStreet(scan.nextLine());
+            ent.setCity(scan.nextLine());
+            ent.setState(scan.nextLine());
+            ent.setZip(scan.nextLine());
+            ent.setPhone(scan.nextLine());
+            ent.setEmail(scan.nextLine());
+            Book.add(ent);
         }
-        Book.add(ent);
     }
 
     public static void list(){
