@@ -19,25 +19,22 @@ public class AddressBook{
         Book.add(newEntry);
     }
 
-    public static void find(String lastName, ArrayList<String> names, ArrayList<Integer> addresses){
-
+    public static ArrayList<Entry> find(String lastName){
+        ArrayList<Entry> possibles = new ArrayList<>();
         for(int i = 0; i < Book.size(); i++){
-            if(Book.get(i).getLastName() == lastName){
-                names.add(Book.get(i).getFirstName() + " " + Book.get(i).getLastName());
-                addresses.add(i);
+            if(Book.get(i).getLastName().equals(lastName)){
+                possibles.add(Book.get(i));
             }
         }
+        return possibles;
     }
 
-    public void remove(String name){
-        int loc = -1;
+    public void remove(Entry rem){
         for(int i = 0; i < Book.size(); i++){
-            if((Book.get(i).getFirstName() + " " + Book.get(i).getLastName()) == name){
-                loc = i;
+            if(Book.get(i) == rem){
+                Book.remove(i);
             }
         }
-        if(loc > -1)
-            Book.remove(loc);
     }
     /*
      * @param Address book to add the entries to

@@ -9,22 +9,9 @@ import java.util.Scanner;
 * @since 1.2
  */
 public class AddressBookApplication {
-
-	public static AddressBook ab;
-
     public static void main(String[] args) throws FileNotFoundException {
 		Menu mainMen = new Menu();
-
-		while (mainMen.displayMainMenu(ab) != 0);
-		//List Address Book
-    	ab.list();
+		mainMen.displayMainMenu();
     }
-
-    public static void initAddressBook(){
-    	Entry entry1 = new Entry("Tristan", "Brodrick", "25200 Carlos Bee Blvd", "Hayward", "CA", "94542", "(707)239-1512", "tbodrick@horizon.csueastbay.edu");
-		Entry entry2 = new Entry();
-    	ab.add(entry1);
-		ab.add(entry2);
-	}
 
 }
