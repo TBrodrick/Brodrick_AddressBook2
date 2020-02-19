@@ -54,23 +54,33 @@ class Menu{
                 case "c": {
                     ArrayList<Entry> possibles = new ArrayList<>();
                     possibles = Book.find(prompt_LastName());
+                    if(possibles.size() > 0){
                     System.out.println("Which of these would you like to Remove?");
                     for (int i = 0; i < possibles.size(); i++) {
                         System.out.println((i + 1) + ". " + possibles.get(i).getFirstName() + " " + possibles.get(i).getLastName());
                     }
                     int opIn = in.nextInt();
                     Book.remove(possibles.get(opIn - 1));
+                    }
+                    else{
+                        System.out.println("No Entries found");
+                    }
                     break;
                 }
                 case "d": {
                     ArrayList<Entry> possibles = new ArrayList<>();
                     possibles = Book.find(prompt_LastName());
-                    System.out.println("Which of these would you like to List?");
-                    for (int i = 0; i < possibles.size(); i++) {
-                        System.out.println((i + 1) + ". " + possibles.get(i).getFirstName() + " " + possibles.get(i).getLastName());
+                    if(possibles.size() > 0) {
+                        System.out.println("Which of these would you like to List?");
+                        for (int i = 0; i < possibles.size(); i++) {
+                            System.out.println((i + 1) + ". " + possibles.get(i).getFirstName() + " " + possibles.get(i).getLastName());
+                        }
+                        int opIn = in.nextInt();
+                        System.out.println(possibles.get(opIn - 1).toString());
                     }
-                    int opIn = in.nextInt();
-                    System.out.println(possibles.get(opIn - 1).toString());
+                    else{
+                        System.out.println("No Entries found");
+                    }
                     break;
                 }
                 case "e": {
@@ -140,7 +150,7 @@ class Menu{
     public int prompt_Zip() {
         int readNum = 0;
         System.out.println("Zip: ");
-        readNum = in.nextInt();
+        readNum = Integer.parseInt(in.nextLine());
         return readNum;
     }
 

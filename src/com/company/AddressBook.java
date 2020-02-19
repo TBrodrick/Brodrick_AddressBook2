@@ -68,7 +68,7 @@ public class AddressBook{
             ent.setStreet(scan.nextLine());
             ent.setCity(scan.nextLine());
             ent.setState(scan.nextLine());
-            ent.setZip(scan.nextInt());
+            ent.setZip(Integer.parseInt(scan.nextLine()));
             ent.setPhone(scan.nextLine());
             ent.setEmail(scan.nextLine());
             Book.add(ent);
